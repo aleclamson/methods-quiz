@@ -11,6 +11,13 @@ class MethodsQuizTest < MiniTest::Test
    	end.new
 	end
 
-	# TODO - write tests here
+	def test_has_teen
+		assert_equal true, @m.has_teen(13, 15, 19)
+		assert_equal true, @m.has_teen(14, 25, 20)
+		assert_equal true, @m.has_teen(16, 18, 21)
+
+		assert_equal false, @m.has_teen(21, 22, 34)
+		assert_equal false, @m.has_teen(5, 6, 9)
+	end
 
 end
